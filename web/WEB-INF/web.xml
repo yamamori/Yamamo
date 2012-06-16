@@ -49,6 +49,14 @@
 		<servlet-name>test4</servlet-name>
 		<url-pattern>/test4</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>test5</servlet-name>
+		<servlet-class>test.Test5</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>test5</servlet-name>
+		<url-pattern>/test5</url-pattern>
+	</servlet-mapping>
 	
 	<!-- Test DB -->
 	<servlet>
@@ -74,6 +82,24 @@
 	<servlet-mapping>
 		<servlet-name>testDb3</servlet-name>
 		<url-pattern>/testDB3</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>bookstore</servlet-name>
+		<servlet-class>bookstore.action.BookStoreAction</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>bookstore</servlet-name>
+		<url-pattern>/bookstore</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>bookstore_api</servlet-name>
+		<servlet-class>bookstore.api.BookStoreApi</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>bookstore_api</servlet-name>
+		<url-pattern>/bookstore/api</url-pattern>
 	</servlet-mapping>
 
 	<!-- DB resource -->

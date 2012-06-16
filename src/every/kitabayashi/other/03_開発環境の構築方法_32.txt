@@ -1,0 +1,263 @@
+■■■■■■■■■■■■■■■■■■■■■■■■■■■
+■開発場所の用意
+■■■■■■■■■■■■■■■■■■■■■■■■■■■
+・「C直下」などに、『work』フォルダを作成。
+→以後、開発に必要なデータは、『work』に入れる
+
+※開発用のフォルダ(ディレクトリ)のパスに、全角(日本語)やスペースを入れないこと。
+※ドライブ直下が無難
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■
+■JAVA
+■■■■■■■■■■■■■■■■■■■■■■■■■■■
+---------------------------------------------
+○JavaをGET
+
+・DropBox(./ref/)から、「jdk1.6.0_20.zip」を取得
+→『work』フォルダで解凍。
+　(C:\work\jdk1.6.0_20)←こんな感じ
+
+※DropBox
+https://www.dropbox.com/sh/rmst9my1ffzjt41/mrSPeiPweP
+
+※自分で揃えたい人は・・・
+・ココへアクセス
+http://java.sun.com/javase/ja/6/download.html
+
+→JDKダウンロード(not JRE)
+→oracleアカウントを入力すると、GETできるよ。
+
+
+	****************スナップショット→Java_Get
+
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■
+■Tomcat
+■■■■■■■■■■■■■■■■■■■■■■■■■■■
+---------------------------------------------
+# ダウンロード
+http://tomcat.apache.org/download-60.cgi
+
+→Download/Tomcat 7.0
+→coreのところから、32bit or 64bitを選択
+
+→『work』フォルダで解凍。
+　(C:\work\apache-tomcat-7.0.27)←こんな感じ
+
+
+	**********スナップショット→Tomcat_Get**********
+
+
+---------------------------------------------
+# 「server.xml」のコメントアウト行を消す。(任意)
+# 「web.xml」のコメントアウト行を消す。(任意)
+# 「context.xml」のコメントアウト行を消す。(任意)
+
+・ダウンロードしたフォルダのTomcat/conf内にある、
+　各ファイルを開いて、コメントアウト部分を消す。
+　(C:\work\apache-tomcat-7.0.27\conf)
+
+※理由：見づらいので。＾＾
+
+---------------------------------------------
+
+
+	**********スナップショット→Tomcat_XML_Reg**********
+
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■
+■Eclipseの準備
+■■■■■■■■■■■■■■■■■■■■■■■■■■■
+---------------------------------------------
+# ダウンロード
+http://www.eclipse.org/downloads/
+
+→Related Links
+→Eclipse Helios (3.6)
+→Download Helios
+→Eclipse IDE for Java EE Developers
+→32bit or 64bit
+※32bit/64bitは、自分のPCに合わせてください。
+→Download
+
+→C直下などに、workフォルダを作成し解凍。
+　(C:\work\eclipse)←こんな感じ
+---------------------------------------------
+
+
+	**********スナップショット→Eclipse_Get**********
+	**********3回目開始スナップショット→Eclipse_Get**********
+
+
+# workspace
+・『work』直下に、『workspace』フォルダを用意。
+　(C:\work\workspace)←こんな感じ
+
+・「C:\work\eclipse\eclipse.exe」をクリック
+
+	**********メッセージ表示**********
+		A JAVA Runtime Environment(JRE) or Java Development Kit(JDK) must be available in order to run Eclipse. 
+		No Java virtual machine was found after searching the following locations.
+		
+		Javaランタイム環境（JRE）またはJava Development Kit（JDK）は、Eclipseを実行するために利用可能でなければなりません。
+		いいえ、Java仮想マシンは、次の場所を検索した後が見つかりませんでした。
+	
+		Javaの環境を再ダウンロード「jdk-6u25-javafx-1_3_1-windows-i586.exe」
+		ユーザ登録
+			メールアドレス
+			C0dew0rks
+	
+		・「C:\work\eclipse\eclipse.exe」をクリック
+		
+		
+	**********スナップショット→Java_Inst**********
+	**********スナップショット→Java_Instから2回目開始**********
+	
+	
+→workspaceでは、「C:\work\workspace」を指定。
+
+・Eclipse起動後
+→Welcomeタブは、×で閉じる
+
+---------------------------------------------
+# Javaの設定 (必須)
+・メニュー→Window→Preferences→Java→Installed JREs
+・「Add」をクリック→「C:\work\jdk1.6.0_20」を指定
+・「Installed JREs」で「jdk1.6.0_20」にチェックし、OK。
+
+---------------------------------------------
+# Serverの設定 (必須)
+・メニュー→Window→Preferences→Java→Server→Runtime Enviroment
+
+
+	**********メニュー→Window→Preferences→Server→Runtime Enviroment**********
+
+
+・「Add」→「Apache Tomcat v7.0」を選択し、Next
+・「Browse...」から、『work』のTomcat7.xを選択。(apache-tomcat-7.0.27)←こんな感じ
+
+---------------------------------------------
+# 各種文字コードの設定 (必須)
+・メニュー→Window→Preferences→General→Content Types
+・以下の「Default encoding」を、全て「UTF-8」にする。
+
+・Java Class File
+・Text/HTML
+・Text/Java Properties File
+・Text/Java Source File
+・Text/JavaScript Source File
+・Text/JSP
+
+→「UTF-8」にして『Update』ボタンをクリック
+
+※注意：『Update』ボタンを押し忘れると反映されません。
+---------------------------------------------
+# Viewの設定 (必須)
+・「Ctrl + 3」で、『console』と入力。console-viewを表示
+・「Ctrl + 3」で、『Server』と入力。Servers-viewを表示
+
+---------------------------------------------
+※お好み (任意)
+
+-- Parsepective
+・window/open parsepectiveで、「Java Parsepective」「Debug」を開く。
+・「Java EE Parsepective」は消す(close)。
+・「Ctrl + 3」で、『navi』と入力。navigator-viewを表示
+
+---------------------------------------------
+
+
+	**********スナップショット→環境調整**********
+	**********2回目スナップショット→環境調整2**********
+
+
+
+■■■■■■■■■■■■■■■■■■■■■■■■■
+■Javaプロジェクトを用意
+■■■■■■■■■■■■■■■■■■■■■■■■■
+○「github」から、講義用の「Java-Project」をGETする。
+
+--URL
+https://github.com/yamamori/Yamamo
+
+○「workspace」に、解凍したフォルダを配置
+・C:\work\workspace
+
+○Eclipseに取り込む
+
+	**********メモ**********
+	Eclipseにソースコードを取り込むには - 逆引きAndroid入門
+	http://www.adakoda.com/android/000220.html
+
+
+	**********スナップショット→Sample_inn**********
+	
+
+■■■■■■■■■■■■■■■■■■■■■■■■■
+■Eclipse＋Tomcat：
+■■■■■■■■■■■■■■■■■■■■■■■■■
+---------------------------------------------
+○Server(Tomcat)の用意
+
+・「Server」Viewで右クリック→New
+・「Apache/Tomcat v7.0」を選択
+・「Server's host name」は「localhost」のまま。変更しない。
+・「Server name」は、任意の名前を付ける。
+・「Next」
+・「Available」にある「test」選択し「Add」。右の箱に移る。
+・「Finish」
+→「Server」Viewに、「test[Stopped] 」という項目が出来る。
+
+※これで擬似サーバが出来た。＾＾
+
+---------------------------------------------
+○Serverの設定変更
+・「Server」Viewの「test」をクリック
+
+・『Overviewタブ』で、以下を変更
+・右側：「Ports：HTTP/1.1」を「80」にする。
+・左側：「Server Options：serve module without publishing」をチェック
+
+・『Modulesタブ』で、以下を変更
+・moduleを選択し、Editボタン→Pathの中身を「空」してOK。
+
+・最後にオマジナイ
+　『Overviewタブ』に戻って、
+　左側の真ん中辺りにある「Browse...」ボタンを押して、すぐにOKボタンを押す。
+　(パスを変更する必要はない。)
+
+・「Ctrl + S」で保存。「Ctrl + W」で閉じる。
+
+※補足
+Eclipseのバグで、稀に設定が反映されないことがある。
+この最後に行うオマジナイで、それを回避することができる。
+
+---------------------------------------------
+○Serverの起動
+・「Server－View」の作ったサーバを選択し、
+　「Ctrl + Alt + D」or「右の虫ボタンをクリック」
+・ブラウザから、テストURLにアクセスして、表示されれば成功。
+
+※補足
+MySQLの準備がまだの場合は、起動時、consoleログにエラーが表示される。
+用意できら問題がなくなるので、今は気にしなくてもOK。
+---------------------------------------------
+○テストURL
+ブラウザから、下のURLにアクセスして、ページが表示されればOK。
+http://localhost/test1
+だと、Hello Worldが表示される。
+
+■■■■■■■■■■■■■■■■■■■■■■■■■
+■テスト用のURL
+■■■■■■■■■■■■■■■■■■■■■■■■■
+
+-- Serverサイドの学習用
+http://localhost/test1
+http://localhost/test2
+http://localhost/test3?name=JavaRoad&hobby=succer&hobby=baseball
+http://localhost/test4
+
+■■■■■■■■■■■■■■■■■■■■■■■■■
+
+
+
